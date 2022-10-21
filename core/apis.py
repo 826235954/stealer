@@ -49,10 +49,10 @@ def video_mapper(request):
 
 def checkToken(request):
     try:
-        signature = request.get("signature")  # 先获取加密签名
-        timestamp = request.get("timestamp")  # 获取时间戳
-        nonce = request.get("nonece")  # 获取随机数
-        echostr = request.get("echostr") # 获取随机字符串
+        signature = request.GET.get("signature")  # 先获取加密签名
+        timestamp = request.GET.get("timestamp")  # 获取时间戳
+        nonce = request.GET.get("nonce")  # 获取随机数
+        echostr = request.GET.get("echostr") # 获取随机字符串
         token = "zyy" #自己设置的token
 
         # 使用字典序排序（按照字母或数字的大小顺序进行排序）
@@ -66,8 +66,8 @@ def checkToken(request):
 
         # 将加密后的字符串和signatrue对比，如果相同返回echostr,表示验证成功
         if hashcode == signature:
-            return echostr
+            return HttpResponse(echostr)
         else:
-            return ""
+            return HttpResponseServerError("")
     except Exception as e:
-        return e
+        return HttpResponseServerError(e)
