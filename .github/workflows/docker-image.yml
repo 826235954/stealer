@@ -27,7 +27,7 @@ jobs:
       run: docker build . --file Dockerfile --tag zyy/stealer
       
     - name: login docker hub
-      run: docker login -u zhangyangyang33 -p ${{ secrets.CREDENTIAL }}
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       
     - name: Push the Docker image
       run: docker push  zyy/stealer
