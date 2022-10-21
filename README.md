@@ -1,9 +1,4 @@
-# 杭州小伙伴请注意绕开此人公司 https://github.com/songxigang/HangzhouBlack
-
-抖音、快手、皮皮虾、火山视频。。。去水印程序 
-
-> 这个项目最早是我玩Tiktok自己方便自己做的搬运工具，本身我也没写过几个python，所以现在的项目结构已经挺乱的了。
-> 我挺好奇大家都是用这个来干嘛，搬运？小程序？方便的话来讨论下吧：https://github.com/moyada/stealer/discussions/61
+# fork的如下https://github.com/moyada/stealer
 
 项目使用 `python3` + `Vue` 开发，安装所需依赖:
 
@@ -26,4 +21,4 @@ pip install django-cors-headers
 ### Docker 方式部署
 
 1. 构建镜像，拉取镜像 `docker pull xueyikang/stealer` 
-2. 启动容器，执行命令 `docker run -d -p 8000:8000 stealer`, 应用地址为：127.0.0.1:8000
+2. 启动容器，执行命令 `docker run -d -p 8000:8000 xueyikang/stealer`, 应用地址为：127.0.0.1:8000
