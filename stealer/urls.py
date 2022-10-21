@@ -25,6 +25,7 @@ urlpatterns = [
     # path('', index.index, name='index'),
     path('ip/', apis.ip, name='ip'),
     path('video/', include('core.urls'), name='video_type'),
+    path('wx/', apis.checkToken, name = 'wx')
 ]
 
 # urlpatterns.extend([path(item.value + '/', include('route.' + item.value + '.urls'))
